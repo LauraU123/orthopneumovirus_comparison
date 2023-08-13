@@ -109,11 +109,7 @@ rule graph:
         treesnuc = get_trees_aa()
     shell:
         """
-        python code/graph.py \
-        --aatrees {params.treesaa} \
-        --nttrees {params.treesnuc} \
-        --dataframe {output.tsv} \
-        --output {output.graph}
+        python code/graph_2.py 
         """
 
 
