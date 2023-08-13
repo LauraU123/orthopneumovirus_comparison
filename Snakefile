@@ -37,7 +37,7 @@ rule sequences:
         gene = lambda w: w.gene
     shell:
         """
-        python code/saving_files.py \
+        python code/split.py \
         --gene {params.gene}
         """
 
@@ -94,7 +94,6 @@ def get_trees_aa():
     genes = ['NS1', 'NS2', 'P', 'N', 'G', 'F', 'M', 'L']
     for gene_ in genes: 
         all_trees+=f"results/alignedfiles/{gene_}_alignedaa.fasta.treefile+"
-    print(all_trees)
     return(all_trees)
 
 rule graph:
@@ -109,7 +108,7 @@ rule graph:
         treesnuc = get_trees_aa()
     shell:
         """
-        python code/graph_2.py 
+        python code/graph.py 
         """
 
 

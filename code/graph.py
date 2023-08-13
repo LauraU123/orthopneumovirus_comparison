@@ -3,6 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
+
+"""THIS FUNCTION GRAPHS THE DISTANCES OF RSV-A to RSV-B, BOVINE DIVERSITY and HUMAN RSV TO BOVINE RSV
+    It does so for all RSV genes except M2, which was not provided in all datasets, and for SH, which is too short to be included
+ """
+
 listofgenes = ['NS1', 'NS2', 'N','P', 'M', 'G', 'F', 'L' ]
 files_aa = [f'results/alignedfiles/{gene}_alignedaa.fasta.treefile' for gene in listofgenes]
 files_nuc = [f'results/alignedfiles/{gene}_alignednuc.fasta.treefile' for gene in listofgenes]
@@ -11,7 +16,6 @@ dictionary_aa, dictionaryhrsv_aa, dictionarybrsv_aa, dictionarybrsv_nuc, diction
 distances_aa, distances_hrsv_aa, distances_brsv_aa, distances_nuc, distances_hrsv_nuc, distances_brsv_nuc = ([] for i in range(6))
 
 for file in files_aa:
-
     T = Phylo.read(file, 'newick')
     T.root.clades
     T.root_at_midpoint()
@@ -72,7 +76,6 @@ for c, (l, i) in enumerate(zip(labels, dictionaries)):
         linestyle_ = "--"
     keys = i.keys()
     values = i.values()
-    #plt.scatter(np.arange(len(keys))+c*0.1, values, label=l)
     plt.plot(np.arange(len(keys))+c*0.1, values, label=l, linestyle= linestyle_, marker=marker_, color=color_)
     plt.xticks(range(len(keys)), keys)
     plt.xlabel('Gene')
