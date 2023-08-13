@@ -1,8 +1,7 @@
 from Bio import Entrez, SeqIO
 import argparse
 
-"""THIS SCRIPT DOWNLOADS GBK FILES FROM THE FOLLOWING ID LIST"""
-
+"""This script downloads gbk files from NCBI genbank given the id and output file"""
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser(
