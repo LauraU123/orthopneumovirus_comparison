@@ -27,6 +27,6 @@ snakemake --cores all
 
 ### Results
 
-The output of this workflow is a graph in pdf format comparing human RSV subtypes, human and bovine RSV and bovine diversity. 
- ![RSV](https://github.com/LauraU123/orthopneumovirus_comparison/blob/main/example_results/graph.pdf)
+The output of this workflow is a graph in png format comparing human RSV subtypes, human and bovine RSV and bovine diversity. 
+ ![RSV](https://github.com/LauraU123/orthopneumovirus_comparison/blob/main/example_results/graph.png)
 

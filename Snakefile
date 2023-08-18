@@ -4,7 +4,7 @@ IDS = ['KJ627301.1','MG431251.1', 'ON152648.1','NC_038272.1', 'NC_001989.1', 'OM
 
 rule all:
     input:
-        graph = "results/graph.pdf",
+        graph = "results/graph.png",
         ids = expand('data/downloaded_data/{ids}_data.gbk', ids=IDS)
 
 rule save:
@@ -102,7 +102,7 @@ rule graph:
         treesnuc = expand(rules.treesaa.output.treefile, gene=GENE)
     output:
         tsv = "results/dataframe.tsv",
-        graph = "results/graph.pdf"
+        graph = "results/graph.png"
     params:
         treesaa = get_trees_nuc(),
         treesnuc = get_trees_aa()

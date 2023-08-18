@@ -83,4 +83,4 @@ for c, (l, i) in enumerate(zip(labels, dictionaries)):
 lgd = plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.yscale('log')
 plt.tight_layout()
-plt.savefig('results/graph.pdf', bbox_extra_artists=(lgd,), format='pdf')
+plt.savefig('results/graph.png', bbox_extra_artists=(lgd,), format='png')
